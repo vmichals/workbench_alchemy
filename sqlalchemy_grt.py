@@ -247,6 +247,10 @@ print "-- SQLAlchemy export v%s" % version
 print "-" * 20
 
 export = []
+
+
+export.append('#!/usr/bin/env python')
+export.append('#-*- coding: utf-8 -*-')
 export.append('"""')
 export.append('This file has been automatically generated with workbench_alchemy v%s' % version)
 export.append('For more details please check here:')
