@@ -48,6 +48,10 @@ def singular(name):
         name = name[:-2]
     elif name.endswith('ies'):
         name = name[:-3] + 'y'
+    elif endsWith(name, ('ces', 'mes')):
+        name = name[:-1]
+    elif name.endswith('es'):
+        name = name[:-2]
     elif name.endswith('s'):
         name = name[:-1]
     return name
@@ -131,7 +135,7 @@ def exportTable(table):
     table_args = {}
     if table.tableEngine:
         table_args['mysql_engine'] = table.tableEngine
-    
+
     charset = table.defaultCharacterSetName or table.owner.defaultCharacterSetName
     if charset:
         table_args['mysql_charset'] = charset
